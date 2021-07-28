@@ -1,0 +1,30 @@
+{
+  "name": "treeshaking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.19.1"
+  },
+  "scripts": {
+    "build": "webpack-cli -c webpack.config.js",
+    "build:named": "yarn build --entry ./named-import.js",
+    "build:named-esm": "yarn build --entry ./named-import-esm.js",
+    "build:direct": "yarn build --entry ./direct-import.js",
+    "build:all": "yarn build:named && yarn build:named-esm && yarn build:direct"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "webpack": "^5.38.1",
+    "webpack-bundle-analyzer": "^4.4.2",
+    "webpack-cli": "^4.7.2"
+  }
+}
